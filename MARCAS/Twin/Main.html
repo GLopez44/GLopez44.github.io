@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>CampeR SetaS</title>
+  <style>
+    /* Fondo general */
+body, html {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  font-family: 'Courier New', Courier, monospace;
+}
+
+.background {
+  background-image: url('https://images.unsplash.com/photo-1511920170033-f8396924c348');
+  background-size: cover;
+  background-position: center;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Tarjeta del menú */
+.menu {
+  background: #f5deb3;
+  padding: 30px 40px;
+  border-radius: 10px;
+  text-align: center;
+  width: 300px;
+  box-shadow: 0px 0px 20px rgba(0,0,0,0.5);
+}
+
+h1 {
+  font-size: 24px;
+  margin-bottom: 5px;
+}
+
+.fecha {
+  font-size: 14px;
+  margin-bottom: 10px;
+}
+
+hr {
+  border: 1px solid #800000;
+  margin: 10px 0;
+}
+
+h2 {
+  font-size: 20px;
+  margin: 15px 0 5px;
+}
+
+.icon {
+  width: 40px;
+  margin: 10px 0;
+}
+
+.productos {
+  list-style: none;
+  padding: 0;
+  margin: 10px 0 20px;
+}
+
+.productos li {
+  display: flex;
+  justify-content: space-between;
+  margin: 5px 0;
+  font-size: 16px;
+}
+
+footer {
+  margin-top: 20px;
+  font-size: 12px;
+}
+
+footer a {
+  color: orange;
+  text-decoration: none;
+}
+
+footer p {
+  margin: 5px 0 0;
+}
+
+  </style>
+</head>
+<body>
+  <div class="background">
+    <div class="menu">
+      <h1>CampeR SetaS</h1>
+      <p class="fecha">Nop. 2023</p>
+      <hr>
+      <h2>Setas</h2>
+      <img src="https://cdn-icons-png.flaticon.com/512/3081/3081887.png" alt="Icono café" class="icon">
+      <ul class="productos">
+        <li><span>Boletus Vanilla</span><span>$3.00</span></li>
+        <li><span>Boletus 2</span><span>$3.75</span></li>
+        <li><span>Boletus Spice</span><span>$3.50</span></li>
+        <li><span>Boletus 3</span><span>$4.00</span></li>
+        <li><span>Boletus x</span><span>$4.50</span></li>
+      </ul>
+      <h2>Postres</h2>
+      <img src="https://cdn-icons-png.flaticon.com/512/685/685352.png" alt="Icono pastel" class="icon">
+      <ul class="productos">
+        <li><span>Donut de Boletus</span><span>$1.50</span></li>
+        <li><span>Boletus Pie</span><span>$2.75</span></li>
+        <li><span>Boletus solo</span><span>$3.00</span></li>
+        <li><span>Boletus Roll</span><span>$2.50</span></li>
+      </ul>
+      <footer>
+        <a href="#">Visita nuestro website</a>
+        <p>123 La Seta Dos</p>
+      </footer>
+    </div>
+  </div>
+</body>
+</html>
