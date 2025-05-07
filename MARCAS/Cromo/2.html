@@ -15,76 +15,125 @@
         }
 
         .card {
-            position: relative;
-            background-color: aliceblue;
-            text-align: center;
             width: 226px;
             height: 317px;
-            border-radius: 10px;
-            font-family: sans-serif;
+            background-color: black;
+            border-radius: 16px;
             overflow: hidden;
-            border: 2px solid black;
+            position: relative;
+            font-family: Arial, sans-serif;
         }
 
-        .name {
+        .card-header {
+            background-color: white;
+            height: 40px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 2px 6px;
+            font-size: 12px;
+            border-bottom: 2px solid black;
+            position: relative;
+        }
+
+        .stars {
+            font-weight: bold;
+        }
+
+        .card-name {
+            font-weight: bold;
+            font-size: 11px;
+        }
+
+        .power-box {
+            position: absolute;
+            right: 6px;
+            top: 4px;
+            text-align: right;
+            font-size: 14px;
+        }
+
+        .power-box div:first-child {
             font-size: 18px;
             font-weight: bold;
-            margin-top: 5px;
+            line-height: 1;
         }
 
-        .picture {
-            width: 200px;
-            height: 120px;
-            margin: 10px auto;
+        .image-section {
+            height: 180px;
             background-image: url('https://magicomagico.com/tutoz/images/anonimous_clan.jpg');
             background-size: cover;
             background-position: center;
-            border: 1px solid black;
+            position: relative;
+            color: white;
+            text-shadow: 1px 1px 2px black;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
         }
 
         .attribute {
-            font-size: 16px;
             font-weight: bold;
-            margin-top: 5px;
+            font-size: 14px;
+            text-align: center;
+            background-color: rgba(255,255,255,0.7);
+            color: black;
+            width: 100%;
         }
 
         .bonus {
-            display: inline-block;
-            background-color: #ccc;
-            color: black;
-            border-radius: 5px;
-            padding: 2px 5px;
-            margin-left: 5px;
-            font-size: 14px;
+            font-size: 13px;
+            margin-left: 4px;
+            font-weight: normal;
+        }
+
+        .card-footer {
+            background-color: white;
+            height: 97px;
+            text-align: center;
+            font-size: 12px;
+            border-top: 2px solid black;
+            padding-top: 10px;
         }
 
         .description {
-            font-size: 14px;
-            padding: 5px;
+            font-size: 12px;
         }
 
-        .info {
-            font-size: 12px;
-            position: absolute;
-            bottom: 10px;
-            left: 0;
-            width: 100%;
+        .artist {
+            font-weight: bold;
+            margin-top: 4px;
+        }
+
+        .real-name {
+            font-size: 11px;
+            margin-top: 2px;
         }
     </style>
 </head>
 <body>
     <div class="card">
-        <div class="name">JOSE</div>
-        <div class="picture"></div>
-        <div class="attribute">
-            SUPER_FUERZA
-            <span class="bonus">+2</span>
+        <div class="card-header">
+            <div>
+                <div class="stars">*****</div>
+                <div class="card-name">Nombre de carta</div>
+            </div>
+            <div class="power-box">
+                <div>4</div>
+                <div>/18</div>
+            </div>
         </div>
-        <div class="description">Esto es mi descripcion</div>
-        <div class="info">
-            <div>Poder: 4 | Cromos: 13</div>
-            <div>Artista: ARTISTA</div>
-            <div>MINombreReal</div>
+
+        <div class="image-section">
+            <div class="attribute">
+                SUPER_FUERZA <span class="bonus">+2</span>
+            </div>
+        </div>
+
+        <div class="card-footer">
+            <div class="description">Esto es mi descripcion</div>
+            <div class="artist">ARTISTA</div>
+            <div class="real-name">MINombreReal</div>
         </div>
     </div>
 </body>
