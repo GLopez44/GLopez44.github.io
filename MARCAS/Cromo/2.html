@@ -1,60 +1,90 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="UTF-8">
-  <title>Cromo Personalizado</title>
-  <style>
-    body{
-        background-color: blue;
-    }
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cromo Personalizado</title>
+    <style>
+        body {
+            background-color: blue;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
 
-    .card {
-      position: relative;
-      width: 300px;
-      height: 450px;
-      background-image: url('Boceto_Carta-1.png');
-      background-size: cover;
-      font-family: sans-serif;
-      color: black;
-      border: 2px solid black;
-    }
+        .card {
+            position: relative;
+            background-color: aliceblue;
+            text-align: center;
+            width: 226px;
+            height: 317px;
+            border-radius: 10px;
+            font-family: sans-serif;
+            overflow: hidden;
+        }
 
-    .stars, .name, .picture, .attribute, .description, .power, .toughness, .artist, .bottom {
-      position: absolute;
-      padding: 2px 5px;
-    }
+        .name {
+            font-size: 18px;
+            font-weight: bold;
+            margin-top: 5px;
+        }
 
-    .stars { top: 10px; right: 20px; font-weight: bold; }
-    .name { top: 10px; left: 10px; font-size: 14px; font-weight: bold; }
-    .picture {
-      top: 40px;
-      left: 10px;
-      width: 280px;
-      height: 200px;
-      background-size: cover;
-      background-position: center;
-    }
-    .attribute { top: 250px; left: 10px; font-size: 16px; font-weight: bold; }
-    .description { top: 280px; left: 10px; right: 10px; font-size: 14px; }
-    .power { top: 10px; right: 50px; font-size: 16px; }
-    .toughness { bottom: 40px; left: 10px; font-size: 14px; }
-    .artist { bottom: 20px; left: 10px; font-size: 12px; }
-    .bottom { bottom: 5px; left: 10px; font-size: 12px; font-style: italic; }
-  </style>
+        .picture {
+            width: 200px;
+            height: 120px;
+            margin: 10px auto;
+            background-image: url('https://magicomagico.com/tutoz/images/anonimous_clan.jpg');
+            background-size: cover;
+            background-position: center;
+            border: 1px solid black;
+        }
+
+        .attribute {
+            font-size: 16px;
+            font-weight: bold;
+            margin-top: 5px;
+        }
+
+        .bonus {
+            display: inline-block;
+            background-color: #ccc;
+            color: black;
+            border-radius: 5px;
+            padding: 2px 5px;
+            margin-left: 5px;
+            font-size: 14px;
+        }
+
+        .description {
+            font-size: 14px;
+            padding: 5px;
+        }
+
+        .info {
+            font-size: 12px;
+            position: absolute;
+            bottom: 10px;
+            left: 0;
+            width: 100%;
+        }
+    </style>
 </head>
 <body>
-
-<div class="card">
-  <div class="stars">****</div>
-  <div class="name">JOSE</div>
-  <div class="picture" style="background-image: url('https://magicomagico.com/tutoz/images/anonimous_clan.jpg');"></div>
-  <div class="attribute">SUPER_FUERZA</div>
-  <div class="description">Esto es mi descripcion</div>
-  <div class="power">4</div>
-  <div class="toughness">13 cromos</div>
-  <div class="artist">ARTISTA</div>
-  <div class="bottom">MINombreReal</div>
-</div>
-
+    <div class="card">
+        <div class="name">JOSE</div>
+        <div class="picture"></div>
+        <div class="attribute">
+            SUPER_FUERZA
+            <span class="bonus">+2</span>
+        </div>
+        <div class="description">Esto es mi descripcion</div>
+        <div class="info">
+            <div>Poder: 4 | Cromos: 13</div>
+            <div>Artista: ARTISTA</div>
+            <div>MINombreReal</div>
+        </div>
+    </div>
 </body>
 </html>
