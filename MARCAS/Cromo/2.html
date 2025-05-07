@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Cromo Personalizado</title>
+  <style>
+    .card {
+      position: relative;
+      width: 300px;
+      height: 450px;
+      background-image: url('Boceto_Carta-1.png');
+      background-size: cover;
+      font-family: sans-serif;
+      color: black;
+      border: 2px solid black;
+    }
+
+    .stars, .name, .picture, .attribute, .description, .power, .toughness, .artist, .bottom {
+      position: absolute;
+      padding: 2px 5px;
+    }
+
+    .stars { top: 10px; right: 20px; font-weight: bold; }
+    .name { top: 10px; left: 10px; font-size: 14px; font-weight: bold; }
+    .picture {
+      top: 40px;
+      left: 10px;
+      width: 280px;
+      height: 200px;
+      background-size: cover;
+      background-position: center;
+    }
+    .attribute { top: 250px; left: 10px; font-size: 16px; font-weight: bold; }
+    .description { top: 280px; left: 10px; right: 10px; font-size: 14px; }
+    .power { top: 10px; right: 50px; font-size: 16px; }
+    .toughness { bottom: 40px; left: 10px; font-size: 14px; }
+    .artist { bottom: 20px; left: 10px; font-size: 12px; }
+    .bottom { bottom: 5px; left: 10px; font-size: 12px; font-style: italic; }
+  </style>
+</head>
+<body>
+
+<div class="card">
+  <div class="stars">★★★★★☆</div>
+  <div class="name">JOSE</div>
+  <div class="picture" style="background-image: url('https://magicomagico.com/tutoz/images/anonimous_clan.jpg');"></div>
+  <div class="attribute">SUPER_FUERZA</div>
+  <div class="description">Esto es mi descripcion</div>
+  <div class="power">4</div>
+  <div class="toughness">13 cromos</div>
+  <div class="artist">ARTISTA</div>
+  <div class="bottom">MINombreReal</div>
+</div>
+
+</body>
+</html>
