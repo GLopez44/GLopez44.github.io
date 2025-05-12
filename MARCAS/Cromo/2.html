@@ -5,40 +5,60 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Cromo Personalizado</title>
     <style>
+        body {
+            background-color: blue;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+
+        .card {
+            width: 226px;
+            height: 317px;
+            background-color: black;
+            border-radius: 16px;
+            overflow: hidden;
+            position: relative;
+            font-family: Arial, sans-serif;
+        }
+
         .card-header {
             background-color: white;
-            height: auto;
-            padding: 6px;
+            height: 40px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 2px 6px;
             font-size: 12px;
             border-bottom: 2px solid black;
-            display: flex;
-            justify-content: space-between;
-            align-items: flex-start;
-            flex-wrap: wrap;
+            position: relative;
         }
-    
-        .card-header-left {
-            display: flex;
-            flex-direction: column;
+
+        .stars {
+            font-weight: bold;
         }
-    
+
+        .card-name {
+            font-weight: bold;
+            font-size: 11px;
+        }
+
         .power-box {
+            position: absolute;
+            right: 6px;
+            top: 4px;
             text-align: right;
             font-size: 14px;
         }
-    
-        .power-box h1 {
+
+        .power-box div:first-child {
             font-size: 18px;
             font-weight: bold;
-            margin: 0;
             line-height: 1;
         }
-    
-        .power-box h6 {
-            margin: 0;
-            line-height: 1;
-        }
-    
+
         .image-section {
             height: 180px;
             background-image: url('https://magicomagico.com/tutoz/images/anonimous_clan.jpg');
@@ -49,9 +69,9 @@
             text-shadow: 1px 1px 2px black;
             display: flex;
             flex-direction: column;
-            justify-content: flex-start;
+            justify-content: center;
         }
-    
+
         .attribute {
             font-weight: bold;
             font-size: 14px;
@@ -59,25 +79,62 @@
             background-color: rgba(255,255,255,0.7);
             color: black;
             width: 100%;
-            margin-top: 0;
+        }
+
+        .bonus {
+            font-size: 13px;
+            margin-left: 4px;
+            font-weight: normal;
+        }
+
+        .card-footer {
+            background-color: white;
+            height: 97px;
+            text-align: center;
+            font-size: 12px;
+            border-top: 2px solid black;
+            padding-top: 10px;
+        }
+
+        .description {
+            font-size: 12px;
+        }
+
+        .artist {
+            font-weight: bold;
+            margin-top: 4px;
+        }
+
+        .real-name {
+            font-size: 11px;
+            margin-top: 2px;
         }
     </style>
-    
+</head>
+<body>
+    <div class="card">
+        <div class="card-header">
+            <div>
+                <div class="stars">*****</div>
+                <div class="card-name">Nombre de carta</div>
+            </div>
+            <div class="power-box">
+                <div><h1>4</h1></div>
+                <div><h6>/18</h6></div>
+            </div>
+        </div>
 
-    <div class="card-header">
-        <div class="card-header-left">
-            <div class="stars">*****</div>
-            <div class="card-name">Nombre de carta</div>
+        <div class="image-section">
+            <div class="attribute">
+                SUPER_FUERZA <span class="bonus">+2</span>
+            </div>
         </div>
-        <div class="power-box">
-            <h1>4</h1>
-            <h6>/18</h6>
-        </div>
-    </div>
-    
-    <div class="image-section">
-        <div class="attribute">
-            SUPER_FUERZA <span class="bonus">+2</span>
+
+        <div class="card-footer">
+            <div class="description">Esto es mi descripcion</div>
+            <div class="artist">ARTISTA</div>
+            <div class="real-name">MINombreReal</div>
         </div>
     </div>
-    
+</body>
+</html>
