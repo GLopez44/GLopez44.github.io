@@ -6,26 +6,29 @@
     <title>Cromo Personalizado</title>
     <style>
         body {
-            background-color: blue;
+            background-image: -webkit-linear-gradient(left,white,rgb(48, 187, 197),blue,rgb(48, 187, 197),white);
             display: flex;
             justify-content: center;
             align-items: center;
             height: 100vh;
             margin: 0;
+            animation: moverFondo 10s linear infinite;
+            background-size: 300% 100%;
         }
 
-        .card {
+        .p1 {
             width: 226px;
             height: 317px;
-            background-color: black;
-            border-radius: 16px;
+            background-image: -webkit-linear-gradient(left,blue,rgb(48, 187, 197),white);
+            border-radius: 10px;
             overflow: hidden;
             position: relative;
             font-family: Arial, sans-serif;
+            border: 2px solid black;
         }
 
-        .card-header {
-            background-color: white;
+        .p2 {
+            background-image: -webkit-linear-gradient(left,blue,rgb(48, 187, 197),white);
             height: 40px;
             display: flex;
             align-items: center;
@@ -36,31 +39,39 @@
             position: relative;
         }
 
-        .stars {
+        @keyframes moverFondo {
+            0% {
+            background-position: 0% 50%;
+            }
+            100% {
+            background-position: 100% 50%;
+            }
+        }
+
+        .p3 {
             font-weight: bold;
         }
 
-        .card-name {
+        .p4 {
             font-weight: bold;
             font-size: 11px;
         }
 
-        .power-box {
+        .p5 {
             position: absolute;
-            right: 6px;
-            top: 4px;
+            right: 10px;
+            top: -30px;
             text-align: right;
             font-size: 14px;
         }
 
-        .power-box div:first-child {
-            padding-bottom: 20px;
+        .p6 {
+            top: -40px;
             font-size: 18px;
             font-weight: bold;
-            line-height: 1;
         }
 
-        .image-section {
+        .p8 {
             height: 180px;
             background-image: url('https://magicomagico.com/tutoz/images/anonimous_clan.jpg');
             background-size: cover;
@@ -73,23 +84,23 @@
             justify-content: center;
         }
 
-        .attribute {
+        .p7 {
             font-weight: bold;
             font-size: 14px;
             text-align: center;
-            background-color: rgba(255,255,255,0.7);
+            background-image: -webkit-linear-gradient(left,blue,rgb(48, 187, 197),white);
             color: black;
             width: 100%;
         }
 
-        .bonus {
+        .p9 {
             font-size: 13px;
             margin-left: 4px;
             font-weight: normal;
         }
 
-        .card-footer {
-            background-color: white;
+        .p10 {
+            background-image: -webkit-linear-gradient(left,blue,rgb(48, 187, 197),white);
             height: 97px;
             text-align: center;
             font-size: 12px;
@@ -97,43 +108,49 @@
             padding-top: 10px;
         }
 
-        .description {
+        .p13 {
             font-size: 12px;
         }
 
-        .artist {
-            font-weight: bold;
-            margin-top: 4px;
+        .p12 {
+            font-size: 8px;
+            margin-top: 2px;
         }
 
-        .real-name {
+        .p11 {
             font-size: 11px;
-            margin-top: 2px;
+            margin-top: -40px;
+            color: aliceblue;
+        }
+
+        .p14 {
+            font-size: 30px;
         }
     </style>
 </head>
 <body>
-    <div class="card">
-        <div class="card-header">
+    <div class="p1">
+        <div class="p2">
             <div>
-                <div class="stars">*****</div>
-                <div class="card-name">Nombre de carta</div>
+                <div class="p3">*****</div>
+                <div class="p4">Nombre de carta</div>
             </div>
-            <div class="power-box">
-                <div><h2>4</h2></div>
-                <div><h6>/18</h6></div>
+            <div class="p5">
+                <div><h3 class="p14">4</h3><h6 style="color: rgb(0, 0, 0);">/18</h6></div>
             </div>
         </div>
 
-        <div class="image-section">
-            <div class="attribute">
-                SUPER_FUERZA <span class="bonus">+2</span>
-            </div>
+        <div class="p7">
+            SUPER_FUERZA <span class="p9">+2</span>
         </div>
-        <div class="card-footer">
-            <div class="description">Esto es mi descripcion</div>
-            <div class="artist">ARTISTA</div>
-            <div class="real-name">MINombreReal</div>
+
+        <div class="p8">
+            <img src="https://ichef.bbci.co.uk/ace/ws/640/cpsprodpb/8B70/production/_102469653_gettyimages-962792890.jpg.webp">
+        </div>
+        <div class="p10">
+            <div class="p11"><h6>MINombreReal</h6></div>
+            <div class="p13">Esto es mi descripcion</div>
+            <div class="p12">ARTISTA</div>
         </div>
     </div>
 </body>
