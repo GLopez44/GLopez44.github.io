@@ -1,0 +1,428 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ASIR 2 Student Portfolio</title>
+    <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;700&family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
+
+    
+    <style>
+        /* --- CSS STYLES --- */
+        :root {
+            --bg-color: #0d1117;       /* GitHub Dark Dimmed-ish */
+            --card-bg: #161b22;
+            --border-color: #30363d;
+            --text-main: #c9d1d9;
+            --text-muted: #8b949e;
+            --accent: #58a6ff;         /* GitHub Blue */
+            --accent-green: #238636;   /* GitHub Green */
+            --accent-red: #da3633;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-main);
+            margin: 0;
+            padding: 0;
+            line-height: 1.6;
+        }
+
+        /* Header & Nav */
+        header {
+            background-color: #010409;
+            padding: 1.5rem 2rem;
+            border-bottom: 1px solid var(--border-color);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+            align-items: center;
+        }
+
+        @media(min-width: 768px) {
+            header { flex-direction: row; justify-content: space-between; }
+        }
+
+        .logo {
+            font-family: 'JetBrains Mono', monospace;
+            font-weight: 700;
+            font-size: 1.5rem;
+            color: #fff;
+        }
+        .logo span { color: var(--accent); }
+
+        nav { display: flex; flex-wrap: wrap; gap: 8px; justify-content: center; }
+
+        .filter-btn {
+            background: transparent;
+            border: 1px solid var(--border-color);
+            color: var(--text-main);
+            padding: 6px 12px;
+            border-radius: 6px;
+            cursor: pointer;
+            font-size: 0.9rem;
+            font-weight: 600;
+            transition: 0.2s;
+        }
+
+        .filter-btn:hover { background-color: var(--border-color); }
+        .filter-btn.active {
+            background-color: var(--accent);
+            color: #000;
+            border-color: var(--accent);
+        }
+
+        /* Main Grid */
+        main {
+            max-width: 1200px;
+            margin: 2rem auto;
+            padding: 0 1rem;
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(340px, 1fr));
+            gap: 2rem;
+        }
+
+        /* Card Styling */
+        .card {
+            background-color: var(--card-bg);
+            border: 1px solid var(--border-color);
+            border-radius: 6px;
+            padding: 1.5rem;
+            transition: transform 0.2s, border-color 0.2s;
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+        }
+
+        .card:hover {
+            transform: translateY(-4px);
+            border-color: var(--accent);
+        }
+
+        .card-header {
+            border-bottom: 1px solid var(--border-color);
+            padding-bottom: 0.8rem;
+        }
+
+        .badge {
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 0.75rem;
+            padding: 2px 6px;
+            border-radius: 4px;
+            border: 1px solid var(--accent);
+            color: var(--accent);
+            text-transform: uppercase;
+        }
+
+        h2 {
+            margin: 0.8rem 0 0 0;
+            font-size: 1.1rem;
+            color: #fff;
+            word-break: break-all;
+        }
+
+        .section-title {
+            font-size: 0.8rem;
+            text-transform: uppercase;
+            color: var(--text-muted);
+            margin-bottom: 0.2rem;
+            font-weight: 700;
+            letter-spacing: 0.5px;
+        }
+
+        p, ul { margin: 0; font-size: 0.95rem; }
+        ul { padding-left: 1.2rem; }
+
+        .glossary { display: flex; flex-wrap: wrap; gap: 6px; }
+        .term {
+            background-color: #21262d;
+            padding: 2px 8px;
+            border-radius: 12px;
+            font-size: 0.8rem;
+            font-family: 'JetBrains Mono', monospace;
+            color: var(--text-main);
+            border: 1px solid var(--border-color);
+        }
+
+        .rating-box {
+            background-color: rgba(56, 189, 248, 0.1);
+            border: 1px solid rgba(56, 189, 248, 0.2);
+            padding: 10px;
+            border-radius: 6px;
+            margin-top: auto;
+        }
+
+        .score { font-weight: 800; color: var(--accent); font-size: 1.1rem; }
+
+        footer {
+            text-align: center;
+            padding: 3rem 1rem;
+            color: var(--text-muted);
+            font-size: 0.9rem;
+            border-top: 1px solid var(--border-color);
+            margin-top: 3rem;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="logo">ASIR_<span id="logo-yr">PORTFOLIO</span></div>
+        <nav>
+            <button class="filter-btn active" onclick="render('ALL')">ALL</button>
+            <button class="filter-btn" onclick="render('SECURITY')">SECURITY</button>
+            <button class="filter-btn" onclick="render('BASES2')">BASES2</button>
+            <button class="filter-btn" onclick="render('IAW')">IAW</button>
+            <button class="filter-btn" onclick="render('PYTHON')">PYTHON</button>
+            <button class="filter-btn" onclick="render('GLOBAL')">GLOBAL</button>
+        </nav>
+    </header>
+
+    <main id="app">
+        </main>
+
+    <footer>
+        <p>Created by ASIR 2 Student | Hosted on GitHub Pages</p>
+    </footer>
+
+    <script>
+        // --- JAVASCRIPT DATA & LOGIC ---
+
+        // DATA: Edit the text inside quotes to match your real experience.
+        const challenges = [
+            // --- SECURITY ---
+            {
+                id: "HACKING_TOOLKING_POLICE_RA1237",
+                module: "SECURITY",
+                summary: "Used a forensic toolkit to analyze a compromised disk image and recover deleted evidence.",
+                concepts: ["Chain of Custody", "File Signature Analysis"],
+                feelings: "Felt like a detective. Very exciting (Happy).",
+                improvements: "I would use a script to automate the hash verification.",
+                glossary: ["Forensics", "Artifact", "Timeline", "Hashing", "Image"],
+                rating: { score: 9, reason: "Very realistic scenario.", fix: "More time for the report." }
+            },
+            {
+                id: "EXPLOIT_BOOM_RA123",
+                module: "SECURITY",
+                summary: "Exploited a buffer overflow vulnerability in a legacy service to gain root access.",
+                concepts: ["Buffer Overflow", "Shellcode Injection"],
+                feelings: "Frustrated at first, but euphoric when the shell popped up.",
+                improvements: "Document the fuzzing process better.",
+                glossary: ["Exploit", "Payload", "NOP Sled", "Vulnerability", "Root"],
+                rating: { score: 8, reason: "Challenging technical lab.", fix: "Update the target VM." }
+            },
+            {
+                id: "MALWARES_RA123",
+                module: "SECURITY",
+                summary: "Analyzed the behavior of a ransomware sample inside a secure sandbox environment.",
+                concepts: ["Static vs Dynamic Analysis", "Sandbox Evasion"],
+                feelings: "Cautious and curious.",
+                improvements: "Isolate the network more strictly next time.",
+                glossary: ["Ransomware", "Sandbox", "C&C Server", "Encryption", "Signature"],
+                rating: { score: 10, reason: "Learned a lot about defense.", fix: "None." }
+            },
+            {
+                id: "COMAN2_LINUX_RA1",
+                module: "SECURITY",
+                summary: "Hardening a Linux server using advanced terminal commands and permission management.",
+                concepts: ["SUID/SGID Permissions", "Auditd Logs"],
+                feelings: "Confident, I like the CLI.",
+                improvements: "Create a bash script to apply the hardening rules.",
+                glossary: ["Hardening", "Daemon", "Sudoers", "Permission", "Kernel"],
+                rating: { score: 7, reason: "Good practice but repetitive.", fix: "Include SELinux tasks." }
+            },
+            {
+                id: "ATTACK_SIMULATION_RA12",
+                module: "SECURITY",
+                summary: "Red Team vs Blue Team simulation. Attacking a server while defending ours.",
+                concepts: ["Incident Response", "Lateral Movement"],
+                feelings: "Stressful but incredibly fun.",
+                improvements: "Improve communication with my teammates.",
+                glossary: ["Red Team", "Blue Team", "DDoS", "Mitigation", "Vector"],
+                rating: { score: 10, reason: "Best activity of the year.", fix: "Make it longer." }
+            },
+
+            // --- BASES2 (ASGBD) ---
+            {
+                id: "DBA_MYSQL_RA12",
+                module: "BASES2",
+                summary: "Installation and secure configuration of a MySQL Server.",
+                concepts: ["ACID Properties", "Storage Engines (InnoDB)"],
+                feelings: "Easy, routine work.",
+                improvements: "Secure the installation with a script.",
+                glossary: ["Schema", "Query", "Index", "Engine", "Trigger"],
+                rating: { score: 6, reason: "Too basic.", fix: "Add replication tasks." }
+            },
+            {
+                id: "USERS_MYSQL_RA23",
+                module: "BASES2",
+                summary: "Managing granular user permissions and roles for different departments.",
+                concepts: ["Privilege Hierarchy", "Grant Tables"],
+                feelings: "Confused by the permission overlap.",
+                improvements: "Use a tool to visualize grants.",
+                glossary: ["Grant", "Revoke", "Role", "Privilege", "Auth"],
+                rating: { score: 7, reason: "Logical challenge.", fix: "Clearer requirements." }
+            },
+            {
+                id: "DBA_SQLITE_RA12",
+                module: "BASES2",
+                summary: "Implementing a lightweight database for a mobile app prototype.",
+                concepts: ["Serverless Database", "SQLite Constraints"],
+                feelings: "Surprised by its simplicity.",
+                improvements: "Normalize the tables better.",
+                glossary: ["Serverless", "Lite", "Blob", "Constraint", "Transaction"],
+                rating: { score: 8, reason: "Quick and effective.", fix: "More complex queries." }
+            },
+            {
+                id: "POSTGRES_DBA_RA34",
+                module: "BASES2",
+                summary: "Migrating data to PostgreSQL and using advanced JSONB features.",
+                concepts: ["JSONB Data Types", "Vacuum Maintenance"],
+                feelings: "Challenged, Postgres is strict.",
+                improvements: "Optimize the indexing strategy.",
+                glossary: ["Migration", "Tablespace", "Vacuum", "WAL", "Cluster"],
+                rating: { score: 9, reason: "Very useful for work.", fix: "None." }
+            },
+
+            // --- IAW ---
+            {
+                id: "EXTENSIONES_VSC_IAW_RA1",
+                module: "IAW",
+                summary: "Setting up VS Code environment for efficient web deployment.",
+                concepts: ["Linter Configuration", "Remote SSH"],
+                feelings: "Productive.",
+                improvements: "Sync settings to GitHub.",
+                glossary: ["IDE", "Extension", "Debug", "Snippet", "Intellisense"],
+                rating: { score: 10, reason: "Essential setup.", fix: "None." }
+            },
+            {
+                id: "DA2_RA15",
+                module: "IAW",
+                summary: "Deploying a PHP application on Apache with Virtual Hosts.",
+                concepts: ["Virtual Hosts", "LAMP Stack"],
+                feelings: "Satisfied when it loaded.",
+                improvements: "Automate with Ansible.",
+                glossary: ["Deploy", "Apache", "DNS", "Directory", "Config"],
+                rating: { score: 8, reason: "Standard sysadmin task.", fix: "Include SSL/HTTPS." }
+            },
+
+            // --- PYTHON ---
+            {
+                id: "EXTENSIONES_VSC_PYTHON_RA1",
+                module: "PYTHON",
+                summary: "Configuring Python environment, Pylint and formatters in VS Code.",
+                concepts: ["Virtual Environments (venv)", "PEP8 Standards"],
+                feelings: "Organized.",
+                improvements: "Explore Poetry for dependencies.",
+                glossary: ["Interpreter", "PIP", "Venv", "Indent", "Module"],
+                rating: { score: 8, reason: "Good setup guide.", fix: "Mention Anaconda." }
+            },
+            {
+                id: "NAVARREDONDA_PYTHON_RA125",
+                module: "PYTHON",
+                summary: "Data processing script for a town census using file handling.",
+                concepts: ["Pandas DataFrames", "CSV Manipulation"],
+                feelings: "Frustrated with CSV format errors.",
+                improvements: "Add exception handling (Try/Except).",
+                glossary: ["List", "Dictionary", "Tuple", "Iteration", "Function"],
+                rating: { score: 7, reason: "Dirty input data.", fix: "Clean the input file." }
+            },
+            {
+                id: "FASTEST_TURTLE_RA12345",
+                module: "PYTHON",
+                summary: "Creating a racing game using the Python Turtle library and OOP.",
+                concepts: ["Object Oriented Programming", "Event Listeners"],
+                feelings: "Very Happy, visual and fun.",
+                improvements: "Add a betting system.",
+                glossary: ["Class", "Object", "Inheritance", "Method", "Library"],
+                rating: { score: 10, reason: "Fun way to learn OOP.", fix: "Allow multiplayer." }
+            },
+
+             // --- GLOBAL (Placeholder as no specific ID was given) ---
+             {
+                id: "GLOBAL_INTEGRATION_PROJECT",
+                module: "GLOBAL",
+                summary: "Integrating Python Backend, MySQL DB and Web Interface.",
+                concepts: ["Full Stack Integration", "Security by Design"],
+                feelings: "Overwhelmed but proud.",
+                improvements: "Better UI for the frontend.",
+                glossary: ["Integration", "Lifecycle", "Production", "Backend", "Frontend"],
+                rating: { score: 9, reason: "The ultimate test.", fix: "More time needed." }
+            }
+        ];
+
+        // LOGIC
+        const app = document.getElementById('app');
+        const buttons = document.querySelectorAll('.filter-btn');
+
+        function render(filter) {
+            app.innerHTML = '';
+            
+            // Update buttons
+            buttons.forEach(btn => btn.classList.remove('active'));
+            const activeBtn = Array.from(buttons).find(b => b.textContent.trim() === filter);
+            if(activeBtn) activeBtn.classList.add('active');
+
+            // Filter data
+            const items = filter === 'ALL' 
+                ? challenges 
+                : challenges.filter(c => c.module === filter);
+
+            // Generate HTML
+            items.forEach(c => {
+                const glossaryHTML = c.glossary.map(t => `<span class="term">${t}</span>`).join('');
+                
+                const html = `
+                    <div class="card">
+                        <div class="card-header">
+                            <span class="badge">${c.module}</span>
+                            <h2>${c.id}</h2>
+                        </div>
+                        
+                        <div>
+                            <div class="section-title">1. Summary</div>
+                            <p>${c.summary}</p>
+                        </div>
+
+                        <div>
+                            <div class="section-title">2. Key Concepts</div>
+                            <ul>${c.concepts.map(i => `<li>${i}</li>`).join('')}</ul>
+                        </div>
+
+                        <div>
+                            <div class="section-title">3. Feelings</div>
+                            <p>${c.feelings}</p>
+                        </div>
+
+                        <div>
+                            <div class="section-title">4. Improvements</div>
+                            <p>${c.improvements}</p>
+                        </div>
+
+                        <div>
+                            <div class="section-title">5. Glossary</div>
+                            <div class="glossary">${glossaryHTML}</div>
+                        </div>
+
+                        <div class="rating-box">
+                            <div class="section-title">6. Rating</div>
+                            <span class="score">${c.rating.score}/10</span> - ${c.rating.reason}
+                            <div style="font-size:0.85rem; margin-top:4px; color:var(--text-muted)">
+                                <em>Improve: ${c.rating.fix}</em>
+                            </div>
+                        </div>
+                    </div>
+                `;
+                app.innerHTML += html;
+            });
+        }
+
+        // Init
+        render('ALL');
+    </script>
+</body>
+</html>
