@@ -3,21 +3,19 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ASIR 2 Student Portfolio</title>
+    <title>ASIR 2 Portfolio - Student</title>
     <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;700&family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
-
     
     <style>
         /* --- CSS STYLES --- */
         :root {
-            --bg-color: #0d1117;       /* GitHub Dark Dimmed-ish */
-            --card-bg: #161b22;
-            --border-color: #30363d;
-            --text-main: #c9d1d9;
-            --text-muted: #8b949e;
+            --bg-color: #0d1117;       /* Dark GitHub-style background */
+            --card-bg: #161b22;        /* Card background */
+            --border-color: #30363d;   /* Subtle borders */
+            --text-main: #c9d1d9;      /* Main text */
+            --text-muted: #8b949e;     /* Secondary text */
             --accent: #58a6ff;         /* GitHub Blue */
             --accent-green: #238636;   /* GitHub Green */
-            --accent-red: #da3633;
         }
 
         body {
@@ -29,7 +27,7 @@
             line-height: 1.6;
         }
 
-        /* Header & Nav */
+        /* Header & Navigation */
         header {
             background-color: #010409;
             padding: 1.5rem 2rem;
@@ -86,7 +84,7 @@
             gap: 2rem;
         }
 
-        /* Card Styling */
+        /* Card Style */
         .card {
             background-color: var(--card-bg);
             border: 1px solid var(--border-color);
@@ -183,179 +181,318 @@
     </header>
 
     <main id="app">
-        </main>
+    </main>
 
     <footer>
-        <p>Created by ASIR 2 Student | Hosted on GitHub Pages</p>
+        <p>Created by 2nd year ASIR student | Hosted on GitHub Pages</p>
     </footer>
 
     <script>
-        // --- JAVASCRIPT DATA & LOGIC ---
+        // --- JAVASCRIPT DATA AND LOGIC ---
 
-        // DATA: Edit the text inside quotes to match your real experience.
         const challenges = [
             // --- SECURITY ---
             {
                 id: "HACKING_TOOLKING_POLICE_RA1237",
                 module: "SECURITY",
-                summary: "Used a forensic toolkit to analyze a compromised disk image and recover deleted evidence.",
-                concepts: ["Chain of Custody", "File Signature Analysis"],
-                feelings: "Felt like a detective. Very exciting (Happy).",
-                improvements: "I would use a script to automate the hash verification.",
+                summary: "Forensic analysis simulation using police tools to recover evidence from a compromised disk.",
+                concepts: ["Chain of Custody", "File signature analysis"],
+                feelings: "I felt like a detective. Very exciting.",
+                improvements: "I would use a script to automate hash checking.",
                 glossary: ["Forensics", "Artifact", "Timeline", "Hashing", "Image"],
-                rating: { score: 9, reason: "Very realistic scenario.", fix: "More time for the report." }
+                rating: { score: 9, reason: "Very realistic scenario.", fix: "More time to write the report." }
             },
             {
                 id: "EXPLOIT_BOOM_RA123",
                 module: "SECURITY",
-                summary: "Exploited a buffer overflow vulnerability in a legacy service to gain root access.",
+                summary: "Buffer Overflow vulnerability exploitation on an old service to gain root access.",
                 concepts: ["Buffer Overflow", "Shellcode Injection"],
-                feelings: "Frustrated at first, but euphoric when the shell popped up.",
-                improvements: "Document the fuzzing process better.",
+                feelings: "Initial frustration, but euphoria when I got shell access.",
+                improvements: "Better document the fuzzing process.",
                 glossary: ["Exploit", "Payload", "NOP Sled", "Vulnerability", "Root"],
-                rating: { score: 8, reason: "Challenging technical lab.", fix: "Update the target VM." }
+                rating: { score: 8, reason: "Challenging technical lab.", fix: "Update the victim virtual machine." }
             },
             {
                 id: "MALWARES_RA123",
                 module: "SECURITY",
-                summary: "Analyzed the behavior of a ransomware sample inside a secure sandbox environment.",
+                summary: "Ransomware behavior analysis in a secure environment (sandbox).",
                 concepts: ["Static vs Dynamic Analysis", "Sandbox Evasion"],
-                feelings: "Cautious and curious.",
+                feelings: "Approached with great caution and curiosity.",
                 improvements: "Isolate the network more strictly next time.",
                 glossary: ["Ransomware", "Sandbox", "C&C Server", "Encryption", "Signature"],
-                rating: { score: 10, reason: "Learned a lot about defense.", fix: "None." }
+                rating: { score: 10, reason: "Learned a lot about defense mechanisms.", fix: "Nothing." }
             },
             {
                 id: "COMAN2_LINUX_RA1",
                 module: "SECURITY",
-                summary: "Hardening a Linux server using advanced terminal commands and permission management.",
-                concepts: ["SUID/SGID Permissions", "Auditd Logs"],
-                feelings: "Confident, I like the CLI.",
-                improvements: "Create a bash script to apply the hardening rules.",
+                summary: "Linux server hardening using advanced commands and permission management.",
+                concepts: ["SUID/SGID Permissions", "Audit Logs (Auditd)"],
+                feelings: "Felt confident, I like the Linux terminal.",
+                improvements: "Create a bash script to apply hardening automatically.",
                 glossary: ["Hardening", "Daemon", "Sudoers", "Permission", "Kernel"],
-                rating: { score: 7, reason: "Good practice but repetitive.", fix: "Include SELinux tasks." }
+                rating: { score: 7, reason: "Good practice but a bit repetitive.", fix: "Include SELinux tasks." }
             },
             {
                 id: "ATTACK_SIMULATION_RA12",
                 module: "SECURITY",
-                summary: "Red Team vs Blue Team simulation. Attacking a server while defending ours.",
+                summary: "Red Team vs Blue Team simulation. Attacking a server while defending our own.",
                 concepts: ["Incident Response", "Lateral Movement"],
                 feelings: "Stressful but incredibly fun.",
-                improvements: "Improve communication with my teammates.",
+                improvements: "Improve communication with teammates.",
                 glossary: ["Red Team", "Blue Team", "DDoS", "Mitigation", "Vector"],
-                rating: { score: 10, reason: "Best activity of the year.", fix: "Make it longer." }
+                rating: { score: 10, reason: "Best activity of the year.", fix: "Make it last longer." }
+            },
+            {
+                id: "ESTUDIO_DMZ_FIREWALL_PROXY_VPN_RA456",
+                module: "SECURITY",
+                summary: "Theoretical study and design of a secure network architecture implementing DMZ, Firewall, Proxy, and VPN.",
+                concepts: ["Network Architecture", "Filtering Rules", "Secure Tunnels"],
+                feelings: "A lot of theory at first, but it helped me understand how the pieces fit together.",
+                improvements: "Use Packet Tracer or another visual tool to map the network before configuring it.",
+                glossary: ["DMZ", "Firewall", "Proxy", "VPN", "Routing"],
+                rating: { score: 8, reason: "Very necessary theoretical foundation.", fix: "Move to practice sooner." }
+            },
+            {
+                id: "DMZ_FIREWALL_VPN_PROXY",
+                module: "SECURITY",
+                summary: "Practical implementation of a DMZ with a perimeter firewall and remote access via VPN.",
+                concepts: ["iptables / pfSense", "OpenVPN / IPsec Configuration", "Access Policies"],
+                feelings: "Configuring routes was a headache, but seeing the ping pass through the VPN was very satisfying.",
+                improvements: "Automate certificate creation for VPN clients.",
+                glossary: ["NAT", "IPsec", "Certificates", "Tunneling", "Ruleset"],
+                rating: { score: 9, reason: "Highly applicable to the real world.", fix: "Spend more time on the Proxy configuration." }
             },
 
-            // --- BASES2 (ASGBD) ---
+            // --- BASES2 (Databases) ---
             {
                 id: "DBA_MYSQL_RA12",
                 module: "BASES2",
-                summary: "Installation and secure configuration of a MySQL Server.",
+                summary: "Secure installation and configuration of a MySQL server.",
                 concepts: ["ACID Properties", "Storage Engines (InnoDB)"],
                 feelings: "Easy, routine work.",
-                improvements: "Secure the installation with a script.",
+                improvements: "Secure the installation with a post-install script.",
                 glossary: ["Schema", "Query", "Index", "Engine", "Trigger"],
                 rating: { score: 6, reason: "Too basic.", fix: "Add replication tasks." }
             },
             {
                 id: "USERS_MYSQL_RA23",
                 module: "BASES2",
-                summary: "Managing granular user permissions and roles for different departments.",
+                summary: "Granular permission and role management for users in different departments.",
                 concepts: ["Privilege Hierarchy", "Grant Tables"],
-                feelings: "Confused by the permission overlap.",
-                improvements: "Use a tool to visualize grants.",
+                feelings: "Confusing due to overlapping permissions.",
+                improvements: "Use a tool to visualize GRANTS.",
                 glossary: ["Grant", "Revoke", "Role", "Privilege", "Auth"],
-                rating: { score: 7, reason: "Logical challenge.", fix: "Clearer requirements." }
+                rating: { score: 7, reason: "Interesting logical challenge.", fix: "Clearer requirements in the instructions." }
             },
             {
                 id: "DBA_SQLITE_RA12",
                 module: "BASES2",
-                summary: "Implementing a lightweight database for a mobile app prototype.",
+                summary: "Lightweight database implementation for a mobile app prototype.",
                 concepts: ["Serverless Database", "SQLite Constraints"],
                 feelings: "Surprised by its simplicity.",
-                improvements: "Normalize the tables better.",
+                improvements: "Normalize tables better.",
                 glossary: ["Serverless", "Lite", "Blob", "Constraint", "Transaction"],
-                rating: { score: 8, reason: "Quick and effective.", fix: "More complex queries." }
+                rating: { score: 8, reason: "Fast and effective.", fix: "Ask for more complex queries." }
             },
             {
                 id: "POSTGRES_DBA_RA34",
                 module: "BASES2",
-                summary: "Migrating data to PostgreSQL and using advanced JSONB features.",
-                concepts: ["JSONB Data Types", "Vacuum Maintenance"],
-                feelings: "Challenged, Postgres is strict.",
-                improvements: "Optimize the indexing strategy.",
+                summary: "Data migration to PostgreSQL and use of advanced JSONB features.",
+                concepts: ["JSONB Data Types", "Maintenance (Vacuum)"],
+                feelings: "Challenged, Postgres is very strict.",
+                improvements: "Optimize the index strategy.",
                 glossary: ["Migration", "Tablespace", "Vacuum", "WAL", "Cluster"],
-                rating: { score: 9, reason: "Very useful for work.", fix: "None." }
+                rating: { score: 9, reason: "Very useful for future jobs.", fix: "Nothing." }
+            },
+            {
+                id: "NO_SOY_UN_MONGO_RA1234",
+                module: "BASES2",
+                summary: "Installation, configuration, and first steps with MongoDB performing CRUD queries.",
+                concepts: ["Document-Oriented Databases", "BSON", "Collections"],
+                feelings: "Relieved not having to think about rigid relational tables. I liked the JSON-based syntax.",
+                improvements: "Dive deeper into the Aggregation framework.",
+                glossary: ["Document", "Collection", "NoSQL", "BSON", "Pipeline"],
+                rating: { score: 8, reason: "Good introduction to NoSQL.", fix: "Add more test data to the dataset." }
+            },
+            {
+                id: "ESTUDIO_3_GESTORES_NOSQL_RA456",
+                module: "BASES2",
+                summary: "Comparative analysis of 3 different NoSQL database managers (e.g., MongoDB, Cassandra, Neo4j).",
+                concepts: ["CAP Theorem", "Graphs vs Documents vs Key-Value"],
+                feelings: "Opened my mind to other use cases where MySQL isn't the best option.",
+                improvements: "Do a small performance test between them.",
+                glossary: ["CAP Theorem", "Graph", "Key-Value", "Scalability", "Node"],
+                rating: { score: 7, reason: "Architecturally interesting.", fix: "Less theory, more deployment." }
+            },
+            {
+                id: "REDIS_CHALLENGE_FASE01_RA456",
+                module: "BASES2",
+                summary: "Initial Redis deployment as an in-memory database for simple key-value storage.",
+                concepts: ["In-Memory Data Structure Store", "Cache", "RDB/AOF Persistence"],
+                feelings: "Surprised by how fast it is. Very easy to spin up with Docker.",
+                improvements: "Learn to properly secure the exposed instance.",
+                glossary: ["Cache", "Key", "Value", "In-Memory", "Latency"],
+                rating: { score: 9, reason: "Key technology to optimize applications.", fix: "Nothing." }
+            },
+            {
+                id: "REDIS_CHALLENGE_FASE02_RA456",
+                module: "BASES2",
+                summary: "Advanced use of Redis with complex structures (Lists, Sets, Hashes) and pub/sub.",
+                concepts: ["Advanced Data Structures", "Publish/Subscribe Pattern"],
+                feelings: "A bit more complex, but huge potential for message queues.",
+                improvements: "Integrate it with a Python script to see pub/sub in real action.",
+                glossary: ["Pub/Sub", "Hash", "Set", "Queue", "Broker"],
+                rating: { score: 8, reason: "Very useful, but requires abstraction.", fix: "Add real company use cases." }
             },
 
-            // --- IAW ---
+            // --- IAW (Web App Deployment) ---
             {
                 id: "EXTENSIONES_VSC_IAW_RA1",
                 module: "IAW",
-                summary: "Setting up VS Code environment for efficient web deployment.",
+                summary: "VS Code environment setup for efficient web deployment.",
                 concepts: ["Linter Configuration", "Remote SSH"],
-                feelings: "Productive.",
-                improvements: "Sync settings to GitHub.",
+                feelings: "Felt productive.",
+                improvements: "Sync configuration with GitHub.",
                 glossary: ["IDE", "Extension", "Debug", "Snippet", "Intellisense"],
-                rating: { score: 10, reason: "Essential setup.", fix: "None." }
+                rating: { score: 10, reason: "Essential configuration.", fix: "None." }
             },
             {
                 id: "DA2_RA15",
                 module: "IAW",
-                summary: "Deploying a PHP application on Apache with Virtual Hosts.",
+                summary: "PHP app deployment on Apache using Virtual Hosts.",
                 concepts: ["Virtual Hosts", "LAMP Stack"],
-                feelings: "Satisfied when it loaded.",
-                improvements: "Automate with Ansible.",
+                feelings: "Satisfied when the page finally loaded.",
+                improvements: "Automate the process with Ansible.",
                 glossary: ["Deploy", "Apache", "DNS", "Directory", "Config"],
-                rating: { score: 8, reason: "Standard sysadmin task.", fix: "Include SSL/HTTPS." }
+                rating: { score: 8, reason: "Standard sysadmin task.", fix: "Include SSL/HTTPS certificates." }
+            },
+            {
+                id: "DB_GAMES_PHP_RA567",
+                module: "IAW",
+                summary: "Development of a PHP web application connected to a database to manage a video game catalog.",
+                concepts: ["PDO / MySQLi Connection", "Web CRUD Operations", "SQL Injection Prevention"],
+                feelings: "Classic but effective. Finally understood how the frontend communicates with the database.",
+                improvements: "Use the MVC pattern so HTML and SQL queries aren't mixed.",
+                glossary: ["CRUD", "Query", "PDO", "Frontend", "Sanitization"],
+                rating: { score: 8, reason: "Fundamental for understanding dynamic web apps.", fix: "Modernize the CSS." }
             },
 
             // --- PYTHON ---
             {
                 id: "EXTENSIONES_VSC_PYTHON_RA1",
                 module: "PYTHON",
-                summary: "Configuring Python environment, Pylint and formatters in VS Code.",
+                summary: "Python environment, Pylint, and formatter setup in VS Code.",
                 concepts: ["Virtual Environments (venv)", "PEP8 Standards"],
-                feelings: "Organized.",
-                improvements: "Explore Poetry for dependencies.",
+                feelings: "Felt organized.",
+                improvements: "Explore Poetry for dependency management.",
                 glossary: ["Interpreter", "PIP", "Venv", "Indent", "Module"],
-                rating: { score: 8, reason: "Good setup guide.", fix: "Mention Anaconda." }
+                rating: { score: 8, reason: "Good starter guide.", fix: "Mention Anaconda." }
             },
             {
                 id: "NAVARREDONDA_PYTHON_RA125",
                 module: "PYTHON",
-                summary: "Data processing script for a town census using file handling.",
+                summary: "Data processing script for municipal census using files.",
                 concepts: ["Pandas DataFrames", "CSV Manipulation"],
-                feelings: "Frustrated with CSV format errors.",
+                feelings: "Frustrated with CSV formatting errors.",
                 improvements: "Add exception handling (Try/Except).",
                 glossary: ["List", "Dictionary", "Tuple", "Iteration", "Function"],
-                rating: { score: 7, reason: "Dirty input data.", fix: "Clean the input file." }
+                rating: { score: 7, reason: "Input data was messy.", fix: "Clean the input file first." }
             },
             {
                 id: "FASTEST_TURTLE_RA12345",
                 module: "PYTHON",
-                summary: "Creating a racing game using the Python Turtle library and OOP.",
-                concepts: ["Object Oriented Programming", "Event Listeners"],
-                feelings: "Very Happy, visual and fun.",
+                summary: "Racing game creation using Turtle library and Object-Oriented Programming.",
+                concepts: ["Object-Oriented Programming", "Event Listeners"],
+                feelings: "Very happy, visual and fun.",
                 improvements: "Add a betting system.",
                 glossary: ["Class", "Object", "Inheritance", "Method", "Library"],
                 rating: { score: 10, reason: "Fun way to learn OOP.", fix: "Allow multiplayer." }
             },
+            {
+                id: "JUTGE_DREDD_RA12345",
+                module: "PYTHON",
+                summary: "Algorithmic challenges and data structures resolution using the Jutge platform.",
+                concepts: ["Algorithmics", "Programming Logic", "Control Structures"],
+                feelings: "Sometimes frustrating when hidden tests failed, but very rewarding to get 'Accepted'.",
+                improvements: "Optimize the cyclomatic complexity of my functions.",
+                glossary: ["Algorithm", "Loop", "Judge", "Runtime", "Execution"],
+                rating: { score: 8, reason: "Makes you think structurally.", fix: "Improve the judge's error messages." }
+            },
+            {
+                id: "ATRACCIONES_PYTHON_VISUAL_RA456",
+                module: "PYTHON",
+                summary: "Graphical User Interface (GUI) development to manage an attractions system.",
+                concepts: ["Graphical Interfaces (Tkinter/PyQt)", "Event-Driven Programming"],
+                feelings: "Fun to interact with buttons and windows instead of just the terminal.",
+                improvements: "Better separate visual logic from business logic (MVC).",
+                glossary: ["GUI", "Widget", "Event", "Listener", "Layout"],
+                rating: { score: 9, reason: "Very visual results.", fix: "Use a more modern library than Tkinter." }
+            },
+            {
+                id: "Flask_Gordon_RA456",
+                module: "PYTHON",
+                summary: "Lightweight web API creation and server routing using the Flask microframework.",
+                concepts: ["Microframeworks", "HTTP Routing", "Template Rendering (Jinja2)"],
+                feelings: "Mind-blowing how fast you can spin up a web server with Python compared to other languages.",
+                improvements: "Implement authentication using JWT tokens.",
+                glossary: ["Routing", "Endpoint", "API", "Framework", "Template"],
+                rating: { score: 10, reason: "Straight to the point and very applicable to backend work.", fix: "None." }
+            },
 
-             // --- GLOBAL (Placeholder as no specific ID was given) ---
+             // --- GLOBAL ---
              {
                 id: "GLOBAL_INTEGRATION_PROJECT",
                 module: "GLOBAL",
-                summary: "Integrating Python Backend, MySQL DB and Web Interface.",
+                summary: "Integration of Python Backend, MySQL DB, and Web Interface.",
                 concepts: ["Full Stack Integration", "Security by Design"],
                 feelings: "Overwhelmed but proud.",
-                improvements: "Better UI for the frontend.",
+                improvements: "Improve the graphical interface (Frontend).",
                 glossary: ["Integration", "Lifecycle", "Production", "Backend", "Frontend"],
-                rating: { score: 9, reason: "The ultimate test.", fix: "More time needed." }
+                rating: { score: 9, reason: "The ultimate test.", fix: "More time is needed." }
+            },
+            {
+                id: "NCA_AWS",
+                module: "GLOBAL",
+                summary: "Cloud infrastructure deployment and administration using Amazon Web Services.",
+                concepts: ["Cloud Computing", "EC2 Instances", "S3 Storage"],
+                feelings: "Felt like a modern SysAdmin. A lot of power in just a few clicks.",
+                improvements: "Learn Infrastructure as Code (Terraform) so it doesn't have to be done manually.",
+                glossary: ["Cloud", "Instance", "Bucket", "VPC", "IAM"],
+                rating: { score: 10, reason: "Essential for the current job market.", fix: "Better control over billing/expenses." }
+            },
+            {
+                id: "CUADERNO_CLASE_COMMITS2",
+                module: "GLOBAL",
+                summary: "Continuous note and progress tracking using version control (Git) and remote repositories.",
+                concepts: ["Version Control", "Markdown", "Git Workflow"],
+                feelings: "Daily maintenance got a bit tedious, but now I appreciate having all my knowledge versioned.",
+                improvements: "Make more atomic commits with more descriptive messages.",
+                glossary: ["Commit", "Push", "Repository", "Markdown", "Branch"],
+                rating: { score: 7, reason: "A very healthy habit for any IT professional.", fix: "Make it feel less mandatory and more organic." }
+            },
+            {
+                id: "EXA_EVA1_PEP",
+                module: "GLOBAL",
+                summary: "Global practical evaluation test for the first term (PEP).",
+                concepts: ["System Integration", "Working Under Pressure", "Troubleshooting"],
+                feelings: "Nervous at first, but it helped me see where my real weak points were.",
+                improvements: "Better manage the resolution time for each machine/exercise.",
+                glossary: ["Exam", "Troubleshooting", "Deadline", "Environment", "Assessment"],
+                rating: { score: 8, reason: "Good way to measure real knowledge.", fix: "A bit more time." }
+            },
+            {
+                id: "EXA_EVA2_PEP",
+                module: "GLOBAL",
+                summary: "Global practical evaluation test for the second term (PEP), featuring higher complexity.",
+                concepts: ["High Availability", "Automated Scripts", "Advanced Databases"],
+                feelings: "Exhausting, but I left feeling almost ready for company internships (FCT).",
+                improvements: "Review the syntax of automation tools before the exam.",
+                glossary: ["Integration", "Scripting", "Performance", "High-Availability", "Deployment"],
+                rating: { score: 9, reason: "Demanding but fair.", fix: "None." }
             }
         ];
 
-        // LOGIC
+        // APP LOGIC
         const app = document.getElementById('app');
         const buttons = document.querySelectorAll('.filter-btn');
 
@@ -374,6 +511,7 @@
 
             // Generate HTML
             items.forEach(c => {
+                // Generate glossary tags
                 const glossaryHTML = c.glossary.map(t => `<span class="term">${t}</span>`).join('');
                 
                 const html = `
@@ -412,7 +550,7 @@
                             <div class="section-title">6. Rating</div>
                             <span class="score">${c.rating.score}/10</span> - ${c.rating.reason}
                             <div style="font-size:0.85rem; margin-top:4px; color:var(--text-muted)">
-                                <em>Improve: ${c.rating.fix}</em>
+                                <em>Would improve: ${c.rating.fix}</em>
                             </div>
                         </div>
                     </div>
@@ -421,7 +559,7 @@
             });
         }
 
-        // Init
+        // Initialize app
         render('ALL');
     </script>
 </body>
